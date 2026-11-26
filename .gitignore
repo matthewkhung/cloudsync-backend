@@ -1,0 +1,14 @@
+# Runtime Garage S3 data & local docker directory
+/data/
+/docker/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+garage.toml
+
+# Logs & OS artifacts
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,15 @@
+services:
+  cloudsync-garage:
+    image: dxflrs/garage:v1.1.0
+    container_name: cloudsync-garage
+    ports:
+      - 3900:3900
+      - 3903:3903
+    volumes:
+      - ${config_cloudsync_toml}:/etc/garage.toml:ro
+      - ${config_cloudsync_data}:/var/lib/garage
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
